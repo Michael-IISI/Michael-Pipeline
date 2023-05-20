@@ -10,6 +10,9 @@ pipeline {
     post {
         always {
             echo 'One way or another, I have finished'
+            mail to: 'team@example.com',
+                 subject: "Current Pipeline: ${currentBuild.fullDisplayName}",
+                 body: "Current Build URL with ${env.BUILD_URL}"
             deleteDir() /* clean up our workspace */
         }
         success {
