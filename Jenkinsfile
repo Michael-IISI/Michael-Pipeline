@@ -1,5 +1,6 @@
 #!groovy
 @Library('bitwiseman-shared@blog/declarative/notifications') _ 
+@Library("shared-library") _ 
 
 pipeline {
   agent {
@@ -13,6 +14,11 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr:'10'))
   }
   stages {
+    stage ('Shared Library') {
+      steps {
+        hellowWorld()
+      }
+    }
     stage ('Start') {
       steps {
         // send build started notifications
