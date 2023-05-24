@@ -2,7 +2,7 @@
 @Library("shared-library") _ 
 
 pipeline {
-  agent { label "Linux" }
+  agent any
   stages {
     stage ('Shared Library') {
       steps {
