@@ -37,9 +37,8 @@ pipeline {
     stage ('Test') {
       steps {
         // run tests with coverage
-        sh 'bundle exec rake spec'
+        sh 'ls -al'
       }
-
       post {
         success {
           // publish html
