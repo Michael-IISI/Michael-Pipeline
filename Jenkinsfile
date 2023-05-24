@@ -29,37 +29,12 @@ pipeline {
         // sh 'bundle exec rake build'
         sh 'echo Build'
       }
-
-      post {
-        success {
-          // Archive the built artifacts
-          // archive includes: 'pkg/*.gem'
-        }
-      }
     }
     stage ('Test') {
       steps {
         // run tests with coverage
         sh 'ls -al'
       }
-      post {
-        success {
-          // publish html
-          publishHTML target: [
-              allowMissing: false,
-              alwaysLinkToLastBuild: false,
-              keepAll: true,
-              reportDir: 'coverage',
-              reportFiles: 'index.html',
-              reportName: 'RCov Report'
-            ]
-        }
-      }
-    }
-  }
-  post {
-    always {
-      sendNotifications currentBuild.result
     }
   }
 }
