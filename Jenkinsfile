@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage ('Shared Library') {
       steps {
-        helloWorld("Michael","Wednesday")
+        helloWorld('Michael','Wednesday')
       }
     }
     stage ('Start') {
