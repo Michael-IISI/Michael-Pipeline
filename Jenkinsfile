@@ -13,18 +13,21 @@ pipeline {
       steps {
         // send build started notifications
         // sendNotifications 'STARTED'
+        sh 'echo Start'
       }
     }
     stage ('Install') {
       steps {
         // install required bundles
         // sh 'bundle install'
+        sh 'echo Install'
       }
     }
     stage ('Build') {
       steps {
         // build
         // sh 'bundle exec rake build'
+        sh 'echo Build'
       }
 
       post {
