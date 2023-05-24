@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage ('Shared Library') {
       steps {
-        sh 'echo Hello World'
+        helloWorld()
       }
     }
     stage ('Start') {
