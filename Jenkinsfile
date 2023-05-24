@@ -1,5 +1,4 @@
 #!groovy
-@Library('bitwiseman-shared@blog/declarative/notifications') _ 
 @Library("shared-library") _ 
 
 pipeline {
