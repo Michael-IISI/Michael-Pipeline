@@ -2,16 +2,7 @@
 @Library("shared-library") _ 
 
 pipeline {
-  agent {
-    // Use docker container
-    docker {
-      image 'ruby:2.3'
-    }
-  }
-  options {
-    // Only keep the 10 most recent builds
-    buildDiscarder(logRotator(numToKeepStr:'10'))
-  }
+  agent any
   stages {
     stage ('Shared Library') {
       steps {
