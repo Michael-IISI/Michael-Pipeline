@@ -2,7 +2,7 @@
 @Library("shared-library") _ 
 
 pipeline {
-  agent any
+  agent { label "Linux" }
   stages {
     stage ('Shared Library') {
       steps {
@@ -12,25 +12,25 @@ pipeline {
     stage ('Start') {
       steps {
         // send build started notifications
-        sendNotifications 'STARTED'
+        // sendNotifications 'STARTED'
       }
     }
     stage ('Install') {
       steps {
         // install required bundles
-        sh 'bundle install'
+        // sh 'bundle install'
       }
     }
     stage ('Build') {
       steps {
         // build
-        sh 'bundle exec rake build'
+        // sh 'bundle exec rake build'
       }
 
       post {
         success {
           // Archive the built artifacts
-          archive includes: 'pkg/*.gem'
+          // archive includes: 'pkg/*.gem'
         }
       }
     }
