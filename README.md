@@ -1,2 +1,2 @@
-# Michael-Pipeline
-Michael's Pipeline from Guided Tutorial
+# Michael-GitHub Actions
+Michael's GitHub Actions form Quickstart
